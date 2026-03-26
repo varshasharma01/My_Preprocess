@@ -1,6 +1,6 @@
-from MyLabelEncoder import MyLabelEncoder
-from MyOneHotEncoder import MyOneHotEncoder
-from MyOrdinalEncoder import MyOrdinalEncoder
+from .encoders.MyLabelEncoder import MyLabelEncoder
+from .encoders.MyOneHotEncoder import MyOneHotEncoder
+from .encoders.MyOrdinalEncoder import MyOrdinalEncoder
 
 
 import numpy as np

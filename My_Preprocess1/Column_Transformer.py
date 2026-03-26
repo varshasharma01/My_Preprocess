@@ -1,7 +1,7 @@
-from My_Preprocess.encoders.MyLabelEncoder import MyLabelEncoder
+from .encoders.MyLabelEncoder import MyLabelEncoder
 from .encoders.MyOneHotEncoder import MyOneHotEncoder
 from .encoders.MyOrdinalEncoder import MyOrdinalEncoder
-from my_pipeline import MyPipeline
+from .my_pipeline import MyPipeline
 
 import numpy as np
 import pandas as pd

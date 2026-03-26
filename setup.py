@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+from .My_Preprocess1.my_pipeline import MyPipeline
 
 setup(
     name="myml",
