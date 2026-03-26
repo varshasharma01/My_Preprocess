@@ -5,3 +5,7 @@ venv/
 # Python-generated files
 __pycache__/
 *.pyc
+
+
+dist/
+.dist/

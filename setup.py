@@ -1,14 +1,19 @@
 from setuptools import setup, find_packages
-from .My_Preprocess1.my_pipeline import MyPipeline
+# from .My_Preprocess1.my_pipeline import MyPipeline
+
+
+with open("README.md", "r", encoding="utf-8") as f:
+    long_description = f.read()
 
 setup(
-    name="myml",
-    version="0.1",
+    name="varsha-preprocess",
+    version="0.1.1",   
     packages=find_packages(),
-    install_requires=[
-        "numpy",
-        "pandas"
-    ],
-    author="Varsha",
-    description="Custom ML preprocessing library from scratch",
+    install_requires=["numpy", "pandas"],
+
+    description="Custom preprocessing pipeline library",
+
+    #  key part for readme
+    long_description=long_description,
+    long_description_content_type="text/markdown",
 )

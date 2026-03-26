@@ -1,3 +1,15 @@
+Metadata-Version: 2.4
+Name: varsha-preprocess
+Version: 0.1.1
+Summary: Custom preprocessing pipeline library
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pandas
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: summary
+
 # My_Preprocess
 
 
