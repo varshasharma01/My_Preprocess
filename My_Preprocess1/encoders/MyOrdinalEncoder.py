@@ -15,20 +15,24 @@
 import numpy as np
 import pandas as pd
 
+
 class MyOrdinalEncoder:
 
-    def __init__(self):
+    def __init__(self, order):
+        self.order = order
         self.mapping = None
         self.most_frequent = None
 
-    def fit(self, X, order):
-        self.mapping = {}
-        for i, category in enumerate(order):
-            self.mapping[category] = i
+    def fit(self, X):
+        X = np.array(X).flatten()
 
-        # Convert to pandas Series to easily drop NaN and find mode
+        # create mapping
+        self.mapping = {cat: i for i, cat in enumerate(self.order)}
+
+        # find most frequent category
         X_series = pd.Series(X).dropna()
-        most_frequent_category = X_series.mode()[0]  # mode() returns sorted Series, take first
+        most_frequent_category = X_series.mode()[0]
+
         self.most_frequent = self.mapping.get(most_frequent_category, 0)
 
         return self
@@ -37,23 +41,22 @@ class MyOrdinalEncoder:
         if self.mapping is None:
             raise ValueError("Call fit() before transform()")
 
-        X_array = np.array(X)  # convert to numpy array
+        X = np.array(X).flatten()
 
         result = []
-        for value in X_array:
-            # check for NaN using pandas (works for both str and float NaN)
+        for value in X:
             if pd.isna(value):
-                result.append(self.most_frequent)   # fill NaN with mode
+                result.append(self.most_frequent)
             elif value in self.mapping:
                 result.append(self.mapping[value])
             else:
-                result.append(self.most_frequent)   # fill unseen category with mode
+                result.append(self.most_frequent)
 
         return np.array(result).reshape(-1, 1)
 
-    def fit_transform(self, X, order):
-        self.fit(X, order)
-        return self.transform(X)  
+    def fit_transform(self, X):
+        self.fit(X)
+        return self.transform(X)
          
 # df = pd.read_csv("Practice/covid_data.csv")
 # X = df['cough']

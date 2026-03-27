@@ -8,7 +8,8 @@ class MyLabelEncoder:
 
     def transform(self, y):
         mapping_value ={val: index for index,val in enumerate(self.categories)} 
-        return y.map(mapping_value)
+        return y.map(mapping_value).values.reshape(-1, 1)
+    
     
     def fit_transform(self, y):
         self.fit(y)

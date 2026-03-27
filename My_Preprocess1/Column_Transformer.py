@@ -32,12 +32,9 @@ class MyColumnTransformer:
         outputs = []
 
         for name, encoder, col in self.fitted_transformers:
-            
             data = df[col].values.reshape(-1, 1)
-
             transformed = encoder.transform(data)
 
-            #  ensure 2D
             if len(transformed.shape) == 1:
                 transformed = transformed.reshape(-1, 1)
 

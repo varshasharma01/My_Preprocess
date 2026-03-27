@@ -4,21 +4,17 @@ import pandas as pd
 class MyOneHotEncoder:
 
     def fit(self, X):
-        self.categories = np.unique(X.dropna())
+        self.X = np.array(X).flatten()
+        self.categories = np.unique(self.X)
 
     def transform(self, X):
-    
-        result = {}
-    
-        for category in self.categories:
-            # for this category, compare every value in X
-            # convert True-False to 1-0
-            # store in result dictionary with category as key
-            result[category] = (X == category).astype(int)
-        
-        # convert dictionary to DataFrame and return
-        return pd.DataFrame(result)
+        X = np.array(X).flatten()
 
+        result = {}
+        for category in self.categories:
+            result[category] = (X == category).astype(int)
+
+        return pd.DataFrame(result).values
     def fit_transform(self, X):
         self.fit(X)
         return self.transform(X)
