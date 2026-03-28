@@ -15,6 +15,7 @@ class MyOneHotEncoder:
             result[category] = (X == category).astype(int)
 
         return pd.DataFrame(result).values
+    
     def fit_transform(self, X):
         self.fit(X)
         return self.transform(X)
