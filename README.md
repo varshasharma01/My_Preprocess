@@ -47,13 +47,15 @@ My_Preprocess/
 │   ├── MyLabelEncoder.py
 │   ├── MyOrdinalEncoder.py
 │   └── MyOneHotEncoder.py
+├── preprocessing/
+│   └── my_scaler.py
 └── Practice/
     └── covid_data.csv
 ```
 
 ---
 
-## ⚙️ Installation
+## ⚙️ To Clone
 
 ```bash
 git clone https://github.com/varshasharma01/My_Preprocess.git
@@ -170,7 +172,7 @@ Strong  Low     Mumbai
 - Designed custom Pipeline system
 - Implemented scaling mathematically
 - Improved modular coding skills
-
+Overview
 ---
 
 ## ⭐ Support
