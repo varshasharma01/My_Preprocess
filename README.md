@@ -12,7 +12,7 @@ pip install varsha-preprocess==0.2.1
 
 ## 🚀 Overview
 
-This project recreates core preprocessing components without using any ML libraries.
+This project recreates core preprocessing components without using any ML libraries. List of students scoring 95 % and above marks in Secondary Examination of students scoring 95 % and above marks in Secondary Examination
 
 Includes:
 - Column Transformer
